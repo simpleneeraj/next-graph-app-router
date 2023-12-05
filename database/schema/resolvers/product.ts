@@ -39,31 +39,6 @@ const resolvers: Resolvers = {
         return null;
       }
     },
-    updateProduct: async (
-      _parent,
-      { slug, input }: { slug: string; input: ProductInput }
-    ) => {
-      try {
-        const result = await collection?.findOneAndUpdate(
-          { slug },
-          { $set: input },
-          { returnDocument: 'after' }
-        );
-        return result || null;
-      } catch (error) {
-        console.error('Error updating product:', error);
-        return null;
-      }
-    },
-    deleteProduct: async (_parent, { slug }) => {
-      try {
-        const result = await collection?.findOneAndDelete({ slug });
-        return result || null;
-      } catch (error) {
-        console.error('Error deleting product:', error);
-        return null;
-      }
-    },
   },
 };
 

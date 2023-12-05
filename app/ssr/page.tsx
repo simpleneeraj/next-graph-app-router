@@ -2,13 +2,13 @@
 
 export const dynamic = 'force-dynamic';
 
-import ApolloClient from '@/database/lib/client';
+import IApolloClient from '@/database/lib/client';
 import { queryProducts } from '@/database/queries/product';
 // import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr';
 
 export default async function Home() {
   // const { data } = useSuspenseQuery(queryProducts);
-  const { data, loading } = await ApolloClient().query({
+  const { data, loading } = await IApolloClient().query({
     query: queryProducts,
   });
   return (

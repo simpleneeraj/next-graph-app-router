@@ -28,7 +28,7 @@ const user: Resolvers = {
   Mutation: {
     createUser: async (_, { input }): Promise<IUser> => {
       try {
-        const newUser = new UserModel({
+        const newUser = await UserModel.create({
           email: input.email,
           username: input.username,
           password: input.password,
@@ -37,7 +37,6 @@ const user: Resolvers = {
           createdAt: new Date(),
           updatedAt: new Date(),
         });
-        await newUser.save();
         return newUser;
       } catch (error) {
         console.error('Error creating user:', error);

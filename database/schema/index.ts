@@ -6,6 +6,7 @@ import productResolver from '@/database/schema/resolvers/product';
 
 const schema = {
   typeDefs: mergeTypeDefs([userTypeDefs, productTypeDefs]),
+  // @ts-expect-error
   resolvers: mergeResolvers([userResolver, productResolver]),
 };
 

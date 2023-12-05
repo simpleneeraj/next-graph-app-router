@@ -151,15 +151,15 @@ export type Resolvers = {
       args: { input: ProductInput },
       context: ResolverContext
     ) => Promise<Product | null>;
-    updateProduct: (
-      parent: any,
-      args: { slug: string; input: ProductInput },
-      context: ResolverContext
-    ) => Promise<Product | null>;
-    deleteProduct: (
-      parent: any,
-      args: { slug: string },
-      context: ResolverContext
-    ) => Promise<Product | null>;
+    // updateProduct: (
+    //   parent: any,
+    //   args: { slug: string; input: ProductInput },
+    //   context: ResolverContext
+    // ) => Promise<Product | null>;
+    // deleteProduct: (
+    //   parent: any,
+    //   args: { slug: string },
+    //   context: ResolverContext
+    // ) => Promise<Product | null>;
   };
 };

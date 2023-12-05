@@ -4,41 +4,9 @@ export const queryProducts = gql`
   query GetAllProducts {
     getAllProducts {
       name
+      price
       sku
       slug
-      price
-      properties {
-        metal
-        purity
-        tarnishResistance
-        hypoallergenic
-        weight
-      }
-      variants {
-        metal {
-          value
-          price
-          image
-          stock
-        }
-        color {
-          value
-          price
-          image
-          stock
-        }
-        size {
-          value
-          price
-          image
-          stock
-        }
-        discount {
-          percentage
-          start_date
-          end_date
-        }
-      }
     }
   }
 `;
